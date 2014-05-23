@@ -1,0 +1,35 @@
+{
+    "name": "LogRequests",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "A chrome extension log all requests",
+    "icons": {
+        "16": "images/icon-16.png",
+        "128": "images/icon-128.png"
+    },
+    "background": {
+        "scripts": [
+            "scripts/background.js"
+        ]
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["contentscript.js"]
+        }
+    ],
+
+    "browser_action": {
+        "default_icon": "images/icon-16.png"
+    },
+    "permissions": [
+        "webRequest",
+        "*://*/*",
+        "webRequestBlocking"
+    ],
+    "web_accessible_resources": [
+        "images/fattie.jpg",
+        "images/icon-16.png"
+    ]
+}
